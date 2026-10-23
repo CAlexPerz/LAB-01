@@ -31,3 +31,18 @@ JOIN clientes c
     ON c.id = m.cliente_id;
 -- Verificar:
 SELECT * FROM analitica.clientes;
+
+-- Crear el rol:
+CREATE ROLE analista NOLOGIN;
+-- Conceder acceso al conjunto de datos analítico:
+GRANT USAGE ON SCHEMA analítica TO analista;
+
+GRANT SELECT ON analitica.clientes TO analista;
+-- El acceso al conjunto analítico debe estar permitido:
+SELECT * FROM analitica.clientes;
+-- El acceso al mapa de correspondencia debe estar restringido:
+SELECT * FROM pii.mapa_cliente;
+-- También debe estar restringido el acceso directo a los datos originales:
+SELECT * FROM public.clientes;
+
+

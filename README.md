@@ -5,3 +5,5 @@
 **Motor:** PostgreSQL 16\
 **Modalidad:** Práctica individual\
 **Duración estimada:** 3 horas
+
+> Carlos Alexis Pérez Lizárraga 4-3

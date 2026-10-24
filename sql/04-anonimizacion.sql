@@ -1,16 +1,4 @@
--- Crear el rol:
-CREATE ROLE analista NOLOGIN;
--- Conceder acceso al conjunto de datos analítico:
-GRANT USAGE ON SCHEMA analítica TO analista;
-
-GRANT SELECT ON analitica.clientes TO analista;
--- El acceso al conjunto analítico debe estar permitido:
-SELECT * FROM analitica.clientes;
--- El acceso al mapa de correspondencia debe estar restringido:
-SELECT * FROM pii.mapa_cliente;
--- También debe estar restringido el acceso directo a los datos originales:
-SELECT * FROM public.clientes;
-
+-- Carlos Alexis Pérez Lizárraga 4-3
 -- 12.1 Generalizar la edad
 SELECT    CASE     WHEN edad BETWEEN 18 AND 30 THEN '18-30'
         WHEN edad BETWEEN 31 AND 45 THEN '31-45'
@@ -32,4 +20,4 @@ SELECT    CASE
         WHEN edad BETWEEN 18 AND 30 THEN '18-30'
         WHEN edad BETWEEN 31 AND 45 THEN '31-45'
         ELSE '46+'   END AS rango_edad,   LEFT(codigo_postal, 2) AS region, COUNT(*) AS total
-FROM clientes GROUP BY 1, 2 HAVING COUNT(*) >= 5;
+FROM clientes GROUP BY 1, 2 HAVING COUNT(*) >= 3;

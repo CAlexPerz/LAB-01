@@ -1,3 +1,4 @@
+-- Carlos Alexis Pérez Lizárraga 4-3
 -- 8.1 Crear el rol
 CREATE ROLE soporte NOLOGIN;
 
@@ -22,4 +23,7 @@ REVOKE ALL ON clientes FROM soporte;
 SELECT * FROM v_clientes_soporte;
 
 --El acceso directo a la tabla debe estar restringido para el rol soporte:
+SET ROLE soporte;
 SELECT * FROM clientes;
+
+RESET ROLE;

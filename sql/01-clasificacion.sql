@@ -1,3 +1,4 @@
+-- Carlos Alexis Pérez Lizárraga 4-3
 CREATE DATABASE "LABORATORIO";
 
 -- 6.1 Crear la tabla de clientes
